@@ -1,3 +1,24 @@
+:root{
+
+    --bg:#0f172a;
+    --card:#1e293b;
+    --display:#0f172a;
+    --button:#334155;
+    --button-hover:#475569;
+    --text:white;
+
+}
+
+.light{
+
+    --bg:#f3f4f6;
+    --card:white;
+    --display:#e5e7eb;
+    --button:#d1d5db;
+    --button-hover:#9ca3af;
+    --text:#111827;
+
+}
 *{
     margin:0;
     padding:0;
@@ -7,7 +28,7 @@
 
 body{
 
-    background:#0f172a;
+    background:var(--bg);
 
     display:flex;
     justify-content:center;
@@ -20,7 +41,7 @@ body{
 
     width:360px;
 
-    background:#1e293b;
+    background:var(--card);
 
     padding:25px;
 
@@ -75,7 +96,7 @@ button{
 
     border-radius:15px;
 
-    background:#334155;
+    background:var(--button);
 
     color:white;
 
@@ -88,7 +109,7 @@ button{
 
 button:hover{
 
-    background:#475569;
+    background:var(--button-hover);
 
     transform:scale(1.05);
 
@@ -104,4 +125,300 @@ button:active{
 
     grid-column:span 2;
 
+}
+/* Operator Buttons */
+
+.operator{
+    background:#f59e0b;
+    color:var(--text);
+}
+
+.operator:hover{
+    background:#d97706;
+}
+
+/* Equal Button */
+
+.equal{
+    background:#22c55e;
+    color:white;
+}
+
+.equal:hover{
+    background:#16a34a;
+}
+
+/* Clear Button */
+
+.clear{
+    background:#ef4444;
+    color:white;
+}
+
+.clear:hover{
+    background:#dc2626;
+}
+
+/* Backspace */
+
+.backspace{
+    background:#eab308;
+    color:white;
+}
+
+.backspace:hover{
+    background:#ca8a04;
+}
+
+/* Better Animation */
+
+button{
+    transition:
+        transform .15s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,.3);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+/* ============================= */
+/* APP LAYOUT */
+/* ============================= */
+
+.app{
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:flex-start;
+
+}
+
+/* ============================= */
+/* HISTORY PANEL */
+/* ============================= */
+
+.history{
+
+    width:260px;
+
+    background:#1e293b;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+.history h2{
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+#history-list{
+
+    max-height:420px;
+
+    overflow-y:auto;
+
+}
+
+.history-item{
+
+    background:#334155;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+    word-break:break-word;
+
+}
+/* ===========================
+   Tablet
+=========================== */
+
+@media screen and (max-width: 1024px){
+
+    .app{
+
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+    }
+
+    .calculator{
+
+        width: 100%;
+        max-width: 420px;
+
+    }
+
+    .history{
+
+        width: 100%;
+        max-width: 420px;
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media screen and (max-width: 768px){
+
+    body{
+
+        padding:20px;
+        height:auto;
+        min-height:100vh;
+
+    }
+
+    .app{
+
+        width:100%;
+
+    }
+
+    .calculator{
+
+        width:100%;
+        padding:20px;
+
+    }
+
+    #display{
+
+        height:70px;
+        font-size:1.8rem;
+        padding:15px;
+
+    }
+
+    .buttons{
+
+        gap:10px;
+
+    }
+
+    button{
+
+        height:60px;
+        font-size:1.1rem;
+
+    }
+
+    .history{
+
+        width:100%;
+        max-width:100%;
+
+    }
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media screen and (max-width:480px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .calculator{
+
+        padding:15px;
+        border-radius:20px;
+
+    }
+
+    #display{
+
+        height:65px;
+        font-size:1.5rem;
+
+    }
+
+    button{
+
+        height:55px;
+        font-size:1rem;
+
+    }
+
+    .history{
+
+        padding:15px;
+
+    }
+
+    .history h2{
+
+        font-size:1.2rem;
+
+    }
+
+}
+
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+#theme-toggle{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    font-size:1.3rem;
+
+}
+footer{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    color:gray;
+    font-size:14px;
 }

@@ -1,4 +1,6 @@
+from simpleeval import simple_eval
 from flask import Flask, render_template, request, jsonify
+
 
 app = Flask(__name__)
 
@@ -16,7 +18,7 @@ def calculate():
     expression = data["expression"]
 
     try:
-        result = eval(expression)
+        result = simple_eval(expression)
 
         return jsonify({
             "result": result

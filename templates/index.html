@@ -9,42 +9,63 @@
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
+    <!-- Calculator -->
     <div class="calculator">
+
+        <div class="header">
+            <h1>Calculator</h1>
+            <button id="theme-toggle">🌙</button>
+        </div>
 
         <input type="text" id="display" placeholder="0" readonly>
 
         <div class="buttons">
-<button data-value="C">C</button>
-<button data-value="back">←</button>
-<button data-value="%">%</button>
-<button data-value="/">/</button>
 
-<button data-value="7">7</button>
-<button data-value="8">8</button>
-<button data-value="9">9</button>
-<button data-value="*">*</button>
+            <button class="clear" data-value="C">C</button>
+            <button class="backspace" data-value="back">←</button>
+            <button class="operator" data-value="%">%</button>
+            <button class="operator" data-value="/">÷</button>
 
-<button data-value="4">4</button>
-<button data-value="5">5</button>
-<button data-value="6">6</button>
-<button data-value="-">-</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button class="operator" data-value="*">×</button>
 
-<button data-value="1">1</button>
-<button data-value="2">2</button>
-<button data-value="3">3</button>
-<button data-value="+">+</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button class="operator" data-value="-">−</button>
 
-<button class="zero" data-value="0">0</button>
-<button data-value=".">.</button>
-<button data-value="=">=</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button class="operator" data-value="+">+</button>
+
+            <button class="zero" data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button class="equal" data-value="=">=</button>
 
         </div>
 
     </div>
 
+    <!-- History Panel -->
+    <div class="history">
+
+        <h2>History</h2>
+
+        <div id="history-list">
+            <p>No calculations yet.</p>
+        </div>
+
+    </div>
+
 </div>
+<footer>
+    Made with Love by Shivam Shukla
+</footer>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
