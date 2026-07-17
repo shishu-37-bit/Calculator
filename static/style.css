@@ -416,9 +416,9 @@ button:active{
 }
 footer{
     position:fixed;
-    bottom:15px;
+    bottom:5px;
     left:50%;
     transform:translateX(-50%);
     color:gray;
-    font-size:14px;
+    font-size:14px;    
 }
